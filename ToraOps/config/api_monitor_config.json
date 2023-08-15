@@ -1,0 +1,125 @@
+{
+    "PyTraderApi":
+        [
+        	{
+                "front_addresses":
+                    [
+                        "tcp://122.144.152.9:6500",
+                        "tcp://122.144.152.9:6503",
+                        "tcp://122.144.152.9:6500"
+                    ],
+        		"LogInAccount": "admin",
+        		"LogInAccountType": "TORA_TSTP_LACT_UserID",
+        		"password": "123456",
+        		"QuiryMarketData": 
+        			[
+            			{
+            				"SecurityID": "000001",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID": "160125",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID": "002463",
+            				"ExchangeID": "SZSE"
+            			},
+                        {
+            				"SecurityID":"511600",
+            				"ExchangeID": "SSE"
+            			},
+            			{
+            				"SecurityID":"600000",
+            				"ExchangeID": "SSE"
+            			}
+        			],
+        		"QrySecurity": 
+        			[
+            			{
+            				"SecurityID":"600000"
+            			},
+            			{
+            				"SecurityID":"0003"
+            			}
+        			]
+        	}
+        ],
+    "PyMdApi":
+        [
+        	{
+        		"address": "tcp://122.144.152.9:26402",
+        		"QuiryMarketData": 
+        			[
+            			{
+            				"SecurityID": "000001",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID": "160125",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID": "002463",
+            				"ExchangeID": "SZSE"
+            			},
+                        {
+            				"SecurityID":"511600",
+            				"ExchangeID": "SSE"
+            			},
+            			{
+            				"SecurityID":"600000",
+            				"ExchangeID": "SSE"
+            			}
+        			],
+        		"SubscribeMarketData": 
+        			[
+            			{
+            				"SecurityID": "000001",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID":"600000",
+            				"ExchangeID": "SSE"
+            			}
+        			]
+        	},
+    	    {
+        		"address": "tcp://122.144.152.9:26402",
+        		"QuiryMarketData": 
+        			[
+            			{
+            				"SecurityID": "000001",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID": "160125",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID": "002463",
+            				"ExchangeID": "SZSE"
+            			},
+                        {
+            				"SecurityID":"511600",
+            				"ExchangeID": "SSE"
+            			},
+            			{
+            				"SecurityID":"600000",
+            				"ExchangeID": "SSE"
+            			}
+        			],
+        		"SubscribeMarketData": 
+        			[
+            			{
+            				"SecurityID": "000001",
+            				"ExchangeID": "SZSE"
+            			},
+            			{
+            				"SecurityID":"600000",
+            				"ExchangeID": "SSE"
+            			}
+        			]
+        	}
+    	]
+}

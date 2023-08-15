@@ -1,0 +1,14 @@
+hostip,port,username,password,servername,tgw_names,exch_front_ip,pbu
+192.168.80.6,22,root,root@124,hx_option_shangzt ,tgw_58y0174|tgw_58y0178,172.27.128*,397377
+192.168.80.12,22,root,root@124,hxzq_wanping,tgw_58y0177,172.27.128*,
+192.168.80.11 ,22,root,root@124,hxzq_wanping,tgw_58y0104|tgw_58y0148|tgw_58y0163,172.27.128*,001747
+192.168.80.13,22,root,root@124,hx_option_wanping,tgw_58y0172|tgw_58y0176,172.27*,001808
+192.168.80.17,22,root,root@124,hxzq_wanping,tgw_58y0179,172.27*,001741
+192.168.80.23 ,22,root,root123,hxzq_wanping,tgw_58y0023,172.27.128*,396777
+192.168.80.202,22,root,root123,hxzq_szt,tgw_58y0044,172.27.128*,395917
+192.168.10.9,22,root,root123,hxzq_dongguan,tgw_58y0114,172.27.128*,001851
+192.168.10.10,22,root,root123,rzrq_dongguan,tgw_58y0164,172.27.128*,005972
+192.168.10.98,22,root,root123,hx_option_nanfang ,tgw_58y0155,172.27.128*,001573
+192.168.10.99,22,root,root123,hxzq_nanfang,tgw_58y0087,172.27.128*,001573
+192.168.253.199,22,root,root123,hxzq_shangzt ,tgw_58y0063|tgw_58y0065|tgw_58y0167,172.27*,397377
+10.188.80.36,22,root,root123,hxzq_wanping,tgw_58y0112|tgw_58y0137,172.27*,001808

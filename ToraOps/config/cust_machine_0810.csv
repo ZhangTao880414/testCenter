@@ -1,0 +1,6 @@
+engine_room,assert_number,assert_type,cabinet,unit,model,serial_number,IT_checked_number,configuration,node_name,use_status,opertaion_system,inner_ip,outer_ip,high_trade_ip,high_mqA_ip,high_mqB_ip,ipmi_ip,comment,customer_name,note,is_monitor,disk_serial_number,custgroup_name,vpns,shelf_time,node_name,buyer,,,,,,,,,,,,,,,,,,,,
+shwp,,虚拟机,虚拟机,,,,,8核32G硬盘：300G,4号节点,,CenOS 7.5,10.188.82.87,10.188.104.178,,,,,,kafang_shwp第三方测试,,,,卡方,kafang_shwp,,4号节点,华鑫采购,,,,,,,,,,,,,,,,,,,,
+shwp,,,新机柜2,U22-23,联想 SR650,J302BL0K,AA002265,,4号节点,,CentOS 7.5,10.188.82.136,10.188.104.123,,,,10.187.13.206,,【卡方】第三方合作,,,,卡方,kafang_shwp,,4号节点,华鑫采购,,,,,,,,,,,,,,,,,,,,
+shwp,,,新机柜2,U25-26,联想 SR650,J302BL0H,AA002264,,4号节点,,CentOS 7.5,10.188.82.137,10.188.104.124,,,,10.187.13.207,,【卡方】第三方合作,,,,卡方,kafang_shwp,,4号节点,华鑫采购,,,,,,,,,,,,,,,,,,,,
+dgnf,,,304-N01,U32-33,N-SIGHT tora001,NST209FBQDCS32,NSQD20200051,,10号节点,,CentOS 7.8,192.168.10.94,10.20.80.194,10.224.124.94,,172.16.22.94,10.192.10.94,,黄志刚,,,BTYF0526016B480BGN,黄志刚,liwei_sz,2021年3月26日,10号节点,N-Sight,,,,,,,,,,,,,,,,,,,,
+shjq,,,D3-L31-R-01-07,U32-33,N-SIGHT tora001,NST209FBQDCS62,NSQD20200081,,15号节点,,CentOS 7.8,10.168.9.81,10.168.1.81,220.82.167.181,,,10.187.69.81,,黄志刚,,,,黄志刚,liwei_shnq,,17号节点,N-Sight,,,,,,,,,,,,,,,,,,,,

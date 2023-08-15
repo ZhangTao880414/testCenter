@@ -1,0 +1,168 @@
+        <Member name="InvestorID" value="505000010196"/>
+
+        <Member name="DepartmentID" value="5050"/>
+
+        <Member name="InvestorType" value="0"/>
+
+        <Member name="InvestorName" value="Ê¢ÁæÀþ"/>
+
+        <Member name="IdCardType" value="1"/>
+
+        <Member name="IdCardNo" value="320981197805156226"/>
+
+        <Member name="OpenDate" value=""/>
+
+        <Member name="CloseDate" value=""/>
+
+        <Member name="InvestorTradingStatus" value="1"/>
+
+        <Member name="InnerBranchID" value=""/>
+
+        <Member name="Operways" value=""/>
+
+        <Member name="Mobile" value="18501669973"/>
+
+        <Member name="Telephone" value=""/>
+
+        <Member name="Email" value="505000010196@hxrzrq.com"/>
+
+        <Member name="Fax" value=""/>
+
+        <Member name="Address" value=""/>
+
+        <Member name="ZipCode" value=""/>
+
+        <Member name="Remark" value=""/>
+
+        <Member name="FeeTemplateID" value="default"/>
+
+        <Member name="MarginRateTemplateID" value="default"/>
+
+        <Member name="ConversionRateTemplateID" value="default"/>
+
+        <Member name="CollateralRiskParamTemplateID" value="default"/>
+
+        <Member name="InterestRateTemplateID" value="default"/>
+
+        <Member name="RiskParamTemplateID" value="default"/>
+
+        <Member name="BusinessScaleConcentrationParamTemplateID" value="default"/>
+
+    </Field>
+
+    </Field>
+
+        <Member name="InvestorID" value="505000010196"/>
+
+        <Member name="BusinessUnitID" value="505000010196"/>
+
+        <Member name="ExchangeID" value="1"/>
+
+        <Member name="MarketID" value="1"/>
+
+        <Member name="ShareholderID" value="E056384101"/>
+
+        <Member name="ShareholderIDType" value="2"/>
+
+        <Member name="ProductID" value="0"/>
+
+        <Member name="AccountID" value="50500001019680"/>
+
+        <Member name="CurrencyID" value="1"/>
+
+    </Field>
+
+    </Field>
+
+        <Member name="InvestorID" value="505000010196"/>
+
+        <Member name="ExchangeID" value="2"/>
+
+        <Member name="ProductID" value="7"/>
+
+        <Member name="SecurityType" value="B"/>
+
+        <Member name="SecurityID" value="00000000"/>
+
+        <Member name="Direction" value="0"/>
+
+        <Member name="BrokerageType" value="1"/>
+
+        <Member name="RatioByAmt" value="0.000150"/>
+
+        <Member name="RatioByPar" value="0.000000"/>
+
+        <Member name="FeePerOrder" value="0.000000"/>
+
+        <Member name="FeeMin" value="5.000000"/>
+
+        <Member name="FeeMax" value="9999999999.000000"/>
+
+        <Member name="FeeByVolume" value="0.000000"/>
+
+        <Member name="RangeMode" value="0"/>
+
+    </Field>
+
+    </Field>
+
+            <Member name="InvestorID" value="505000010196"/>
+
+            <Member name="DepartmentID" value="5050"/>
+
+            <Member name="CollateralRatio" value="99999999.000000"/>
+
+            <Member name="UsefulMargin" value="0.000000"/>
+
+            <Member name="PreDeposit" value="0.000000"/>
+
+            <Member name="UsefulMoney" value="0.000000"/>
+
+            <Member name="Deposit" value="0.000000"/>
+
+            <Member name="Withdraw" value="0.000000"/>
+
+            <Member name="StockMarketValue" value="0.000000"/>
+
+            <Member name="CollateralValue" value="0.000000"/>
+
+            <Member name="CreditBuyDebt" value="0.000000"/>
+
+            <Member name="CreditBuyUntradeDebt" value="0.000000"/>
+
+            <Member name="CreditBuyFrozenMargin" value="0.000000"/>
+
+            <Member name="CreditBuyProfit" value="0.000000"/>
+
+            <Member name="CreditSellMoney" value="0.000000"/>
+
+            <Member name="CreditSellDebt" value="0.000000"/>
+
+            <Member name="CreditSellUntradeDebt" value="0.000000"/>
+
+            <Member name="CreditSellFrozenMargin" value="0.000000"/>
+
+            <Member name="CreditSellProfit" value="0.000000"/>
+
+            <Member name="InterestFee" value="0.000000"/>
+
+            <Member name="TotalAsset" value="0.000000"/>
+
+            <Member name="TotalDebt" value="0.000000"/>
+
+            <Member name="NetAsset" value="0.000000"/>
+
+            <Member name="CreditBuyMargin" value="0.000000"/>
+
+            <Member name="CreditSellMargin" value="0.000000"/>
+
+            <Member name="CreditConvertBuyProfit" value="0.000000"/>
+
+            <Member name="CreditConvertSellProfit" value="0.000000"/>
+
+            <Member name="PredictCollateralRatio" value="99999999.000000"/>
+
+        </Field>
+
+        </Field>
+

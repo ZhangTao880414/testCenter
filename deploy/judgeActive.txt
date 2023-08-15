@@ -1,0 +1,450 @@
+----------------
+10.192.10.3 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.10.34 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.35 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.37 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.38 : 
+USER_NAME:  ADMIN
+PASSWD:  adminadmin$8
+----------------
+----------------
+10.192.10.39 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.4 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.10.41 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.10.42 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.10.43 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.10.44 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.10.45 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.46 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.47 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.49 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.10.5 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.50 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.51 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.52 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.53 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.54 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.55 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.57 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.6 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.64 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.68 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.7 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.70 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.71 : 
+USER_NAME:  USERID
+PASSWD:  PASSW0RD
+----------------
+----------------
+10.192.10.8 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.80 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.81 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.88 : 
+USER_NAME:  administrator
+PASSWD:  adminadmin$8
+----------------
+----------------
+10.192.10.89 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.91 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.95 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.10.96 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.10.97 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.10.98 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.1 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.10 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.11 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.2 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.20 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.140.247 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.248 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.249 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.250 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.3 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.31 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.140.32 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.140.34 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.35 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.36 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.37 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.39 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.140.4 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.41 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.42 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.43 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.46 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.140.48 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.49 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.140.5 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.140.6 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.141.35 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.141.48 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.141.57 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.141.69 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.141.70 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.6.153 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.6.158 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.6.159 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.6.160 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.80.103 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.12 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.20 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.201 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.203 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.207 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.208 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.80.212 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.80.213 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.80.214 : 
+USER_NAME:  ADMIN
+PASSWD:  Adminadmin$8
+----------------
+----------------
+10.192.80.215 : 
+USER_NAME:  admin
+PASSWD:  admin
+----------------
+----------------
+10.192.80.30 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.31 : 
+USER_NAME:  ADMIN
+PASSWD:  ADMIN
+----------------
+----------------
+10.192.80.73 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.9 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------
+----------------
+10.192.80.99 : 
+USER_NAME:  NONE
+PASSWD:  NONE
+----------------

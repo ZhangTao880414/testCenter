@@ -1,0 +1,263 @@
+okx_trade部署步骤
+
+============数据库安装============
+删除系统自带的mariadb：
+rpm -qa |grep mariadb
+rpm -e mariadb* --nodeps
+
+安装mariadb10.2
+vi /etc/yum.repos.d/mariadb.repo
+[mariadb]
+name = MariaDB
+baseurl = https://mirrors.ustc.edu.cn/mariadb/yum/10.2/centos7-amd64
+gpgkey=https://mirrors.ustc.edu.cn/mariadb/yum/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+
+yum clean all
+yum makecache all
+
+yum install MariaDB-server MariaDB-client -y
+
+
+#1.关闭防火墙  
+systemctl stop firewalld.service && systemctl disable firewalld.service
+
+[root@mini ~]# firewall-cmd --query-port=3306/tcp  # 查看3306端口是否开启
+no
+[root@mini ~]# firewall-cmd --zone=public --add-port=3306/tcp --permanent  # 开启3306端口
+success
+[root@mini ~]# firewall-cmd --zone=public --add-port=8080/tcp --permanent  # 开启8080端口
+[root@mini ~]# firewall-cmd --reload  # 重启防火墙
+success
+[root@mini ~]# firewall-cmd --query-port=3306/tcp  # 查看3306端口是否开启
+yes
+
+
+2.开启mariadb服务  systemctl start mariadb.service
+3.检查mariadb状态，确认服务已开启   systemctl status -l mariadb.service
+4.开机自启动： systemctl enable mariadb.service
+
+
+初始化：
+[root@localhost src]# mysql_secure_installation
+ 
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+ 
+In order to log into MariaDB to secure it, we will need the current
+password for the root user.  If you've just installed MariaDB, and
+you haven't set the root password yet, the password will be blank,
+so you should just press enter here.
+ 
+Enter current password for root (enter for none):  #初次运行，直接回车
+OK, successfully used password, moving on...
+ 
+Setting the root password ensures that nobody can log into the MariaDB
+root user without the proper authorisation.
+ 
+Set root password? [Y/n] Y    #是否设置root用户密码，输入Y并回车或直接回车
+New password:                 #设置root用户密码
+Re-enter new password:        #密码确认
+Password updated successfully!
+Reloading privilege tables..
+ ... Success!
+ 
+ 
+By default, a MariaDB installation has an anonymous user, allowing anyone
+to log into MariaDB without having to have a user account created for
+them.  This is intended only for testing, and to make the installation
+go a bit smoother.  You should remove them before moving into a
+production environment.
+ 
+Remove anonymous users? [Y/n] #是否删除匿名用户，回车
+ ... Success!
+ 
+Normally, root should only be allowed to connect from 'localhost'.  This
+ensures that someone cannot guess at the root password from the network.
+ 
+Disallow root login remotely? [Y/n] n    #是否禁止root远程登录，输入n回车（我需要远程连接）
+ ... skipping.
+ 
+By default, MariaDB comes with a database named 'test' that anyone can
+access.  This is also intended only for testing, and should be removed
+before moving into a production environment.
+ 
+Remove test database and access to it? [Y/n]     #是否删除test数据库，回车
+ - Dropping test database...
+ ... Success!
+ - Removing privileges on test database...
+ ... Success!
+ 
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+ 
+Reload privilege tables now? [Y/n]     #是否重新加载权限表，回车
+ ... Success!
+ 
+Cleaning up...
+ 
+All done!  If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+Thanks for using MariaDB!
+
+
+设置密码并登录（密码设置为与OS root密码一致）
+mysqladmin -u root password "devops"
+mysql -u root -p
+use mysql;
+grant all privileges on *.* to 'root'@'%' identified by 'devops' with grant option;
+flush privileges;
+
+开启长字符支持
+set global innodb_large_prefix=on;
+show variables like '%innodb_large_prefix%';
+
+set global innodb_file_format=Barracuda;
+show variables like '%innodb_file_format%';
+
+重启数据库：
+systemctl restart mariadb
+============数据库安装完成============
+
+
+第五步：备份mariadb数据库
+
+[root@dba01 ~]# mysqldump -uroot -pdevops --all-databases >backup.sql
+
+第六步：还原mariadb数据库
+
+[root@dba01 ~]# mysql -uroot -pdevops <backup.sql
+
+
+mysqldump -u root -p --databases okx_trade> okx_trade.sql
+
+python3 -m venv env_okx
+source /home/env_okx/bin/activate
+
+pip3.7 install -r requirements.txt
+pip3.7 install django-admin
+python3.7 /usr/local/python3/bin/django-admin startproject okx_trade_project
+
+创建数据库
+okx_trade
+
+
+python3.7 manage.py makemigrations
+python3.7 manage.py migrate
+python3.7 manage.py collectstatic
+python3.7 manage.py runserver 0.0.0.0:8080
+python3.7 manage.py createsuperuser
+
+
+python3.7 get_single_hangqing.py OKB-USDT 1
+python3.7 get_single_hangqing_zhishu.py OKB OKB-USDT 1
+
+{'instType': 'SPOT', 'instId': 'OKB-USDT', 'last': '19.898', 'lastSz': '0.221872', 'askPx': '19.898', 'askSz': '47.296607', 'bidPx': '19.893', 'bidSz': '13.5', 'open24h': '19.386', 'high24h': '19.99', 'low24h': '19.304', 'volCcy24h': '27361637.054448', 'vol24h': '1393986.564643', 'ts': '1650733055988', 'sodUtc0': '19.67', 'sodUtc8': '19.916'}
+
+
+
+pip安装uwsgi后,需要将uwsgi加入环境变量，这样才能识别 
+vi /etc/profile
+PATH=$PATH:/usr/local/python3/bin
+
+
+============uwsgi.ini文件内容============
+# uwsig使用配置文件启动
+[uwsgi]
+# 项目所在的根目录
+chdir=/home/okx_trade/okx_trade_project/
+# 指定项目的application,区别于启动命令--wsgi-filemysite/wsgi.py
+module=okx_trade_project.wsgi:application
+# 指定sock的文件路径，这个sock文件会在nginx的uwsgi_pass配置，用来nginx与uwsgi通信       
+# 支持ip+port模式以及socket file模式
+socket=127.0.0.1:9001
+# 进程个数       
+processes = 8
+# 每个进程worker数
+workers=5
+# uwsgi的进程名称前缀
+procname-prefix-spaced=okx_trade
+# py文件修改，自动加载
+py-autoreload=1
+#解决重启失败
+reload-mercy = 1
+worker-reload-mercy = 1
+# 指定IP端口，web访问入口
+http=0.0.0.0:8080
+# 指定多个静态文件：static目录和media目录,也可以不用指定该静态文件，在nginx中配置静态文件目录
+# uwsgi有自己的配置语法，详细可参考官网，无需写绝对路径，可以用循环、判断等高级配置语法
+for =static media
+endfor =
+# 启动uwsgi的用户名和用户组
+uid=root
+gid=root
+# 启用主进程
+master=true
+# 自动移除unix Socket和pid文件当服务停止的时候
+vacuum=true
+# 序列化接受的内容，如果可能的话
+thunder-lock=true
+# 启用线程
+enable-threads=true
+# 设置一个超时，用于中断那些超过服务器请求上限的额外请求
+harakiri=3600
+# 设置缓冲
+post-buffering=4096
+# 设置日志目录
+daemonize=%(chdir)/uwsgi_conf/uwsgi.log
+# uWSGI进程号存放
+pidfile=%(chdir)/uwsgi_conf/uwsgi.pid
+============uwsgi.ini文件内容============
+
+
+开启项目：
+cd /home/okx_trade/okx_trade_project/uwsgi_conf
+uwsgi --ini uwsgi.ini
+
+关闭项目：
+cd /home/okx_trade/okx_trade_project/uwsgi_conf
+uwsgi --stop uwsgi.pid
+
+
+{
+    "name": "My Server",
+    "host": "192.168.121.143",
+    "protocol": "sftp",
+    "port": 22,
+    "username": "root",
+    "password": "devops",
+    "remotePath": "/home/okx_trade/okx_trade_project/",
+    "uploadOnSave": true
+}
+
+{
+    "name": "My Server",
+    "host": "114.119.175.251",
+    "protocol": "sftp",
+    "port": 22,
+    "username": "root",
+    "password": "Zt880414.",
+    "remotePath": "/home/okx_trade/okx_trade_project/",
+    "uploadOnSave": true
+}
+
+
+
+
+
+jpow
+node
+aigp
+cula
+gttr
+bank
+vmpx
+
+
+
+
+
+
+
+python3 /home/okx_trade/okx_trade_project/job_scripts/get_single_hangqing.py EOS-USDT 2
+

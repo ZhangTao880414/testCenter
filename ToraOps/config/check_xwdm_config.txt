@@ -1,0 +1,3 @@
+hostip,port,username,password,servername,remote_dir,xwdm_check_col
+192.168.238.7,22,trade,trade,tradeserver,/home/trade/temp,hx_szt
+192.168.238.7,22,trade,trade,tradeserver,/home/trade/temp,hx_wanping

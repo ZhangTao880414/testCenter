@@ -1,0 +1,2 @@
+hostip,port,username,password,servername,tgw_names,exch_front_ip,pbu
+192.168.238.7,22,root,root123,tradeserver,tgw_58y0013|tgw_58y0014,172.27.128.192,12213

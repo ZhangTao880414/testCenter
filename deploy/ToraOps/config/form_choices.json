@@ -1,0 +1,202 @@
+{
+    "tora_monitor":
+	{
+		"TRIGGER_CHOICES":
+    	{
+    		"date": "一次性",
+    		"interval": "固定间隔",
+    		"cron": "crontab格式"
+    	},
+    "STATUS_CHOICES":
+    	{
+    		"0": "暂停",
+    		"1": "激活"
+    	}	
+	},
+	"toraapp":
+	{
+		"BUSINESS_CHOICES":
+    	{
+			"stock": "现货股票",
+			"sp": "期权",
+			"credit": "两融",
+			"cffex": "中金期货"
+    	},
+		"APPLY_SOURCE":
+    	{
+			"0": "toraapp",
+			"1": "nsight",
+			"9": "其他"
+    	},
+		"APPS_CHOICES":
+    	{
+			"tradeserver1": "交易主高速A",
+			"tradeserver2": "交易备高速A",
+			"tradeserver1B": "交易主高速B",
+			"tradeserver2B": "交易备高速B",
+			"node_md_L1": "节点沪深L1行情",
+			"trade_front1": "交易前置1",
+			"trade_front2": "交易前置2",
+			"trade_front3": "交易前置3",
+			"trade_front4": "交易前置4",
+			"mq_front1": "行情前置1",
+			"mq_front2": "行情前置2",
+			"mq_front3": "行情前置3",
+			"fens1": "fens1",
+			"fens2": "fens2",
+			"fens3": "fens3"
+    	},
+		"TASK_CHOICES":
+    	{
+			"1": "设备上架",
+			"2": "设备下架",
+			"3": "更改操作系统",
+			"4": "服务器维修",
+			"5": "服务器移位",
+			"6": "共享资源申请",
+			"7": "共享资源回收",
+            "8": "外网授权网络申请",
+			"9": "操作员强制回收资源"
+    	},
+		"TASK_STATUS":
+    	{
+			"0": "待处理",
+			"1": "完成",
+			"2": "挂起",
+			"8": "作废",
+			"9": "失败"
+    	},
+		"ASSERT_CHOICES":
+    	{
+			"1": "实体服务器",
+			"2": "虚拟机",
+			"3": "云服务器",
+			"4": "交换机",
+			"5": "光分器",
+			"9": "其他"
+    	},
+		"MQ_TYPE":
+    	{
+			"md_L2": "沪深行情L2",
+			"md_L1": "沪深行情L1",
+			"sse_md_L2": "沪市行情L2",
+			"szse_md_L2A": "深市行情L2",
+			"szse_md_L2B": "深市行情fpga_L2_B",
+			"szse_md_L2C": "深市行情fpga_L2_C",
+			"cffex_L1": "期货行情L1"
+    	},
+		"REGISTER_CHOICES":
+    	{
+			"tcp": "tcp注册",
+			"multicast": "multicast注册",
+			"udp": "upd注册"
+    	},
+		"TELE_CHOICES":
+    	{
+			"tcp": "tcp连接",
+			"udp": "upd组播"
+    	},
+		"ROOM_CHOICES":
+    	{
+			"shwp": "上海宛平",
+			"shgq": "上海外高桥",
+			"shjq": "上海金桥",
+			"shkj": "上海科技网",
+			"shxt": "上海斜土路",
+			"dgnf": "东莞南方"
+    	},
+		"OWNER_CHOICES":
+    	{
+			"1": "客户自购",
+			"2": "华鑫采购",
+			"3": "华鑫自有",
+			"4": "全创自组机",
+			"5": "营业部提供",
+			"9": "不确定"
+    	},
+		"PURPOSE_CHOICES":
+    	{
+			"1": "客户独用",
+			"2": "客户共用",
+			"3": "奇点自用",
+			"4": "全创其他项目组",
+			"5": "华鑫证券独用",
+			"9": "不确定"
+    	},
+		"ASSIGN_CHOICES":
+    	{
+			"0": "未分配",
+			"1": "已使用",
+			"2": "待回收",
+			"3": "已回收"
+    	},
+		"ACTIVE_CHOICES":
+    	{
+			"0": "不可用",
+			"1": "正常",
+			"4": "维修",
+			"5": "空系统",
+			"8": "已下架"
+    	},
+		"BOOLEAN_CHOICES":
+    	{
+			"0": "否",
+			"1": "是"
+    	},
+		"ACCESS_CHOICES":
+    	{
+			"0": "无",
+			"1": "新增",
+			"2": "移除"
+    	},
+		"UPGRADE_STATUS":
+    	{
+			"0": "待执行",
+			"1": "执行完成",
+			"2": "升级中",
+			"3": "回退中",
+			"4": "执行失败",
+			"9": "其他"
+    	},
+		"UPGRADE_COMP":
+    	{
+			"tradeserver1": "主交易",
+			"tradeserver2": "备交易",
+			"node_md_L1": "节点沪深L1行情",
+			"trade_front1": "交易前置1",
+			"trade_front2": "交易前置2",
+			"trade_front3": "交易前置3",
+			"mq_front1": "行情前置1",
+			"mq_front2": "行情前置2",
+			"mq_front3": "行情前置3",
+			"fens1": "fens1",
+			"fens2": "fens2",
+			"fens3": "fens3"
+    	},
+		"COM_STATUS":
+    	{
+			"0": "异常",
+			"1": "正常",
+			"2": "升级中",
+			"3": "回退中",
+			"4": "其他"
+    	},
+		"BEHAVIOUR_CHOICES":
+    	{
+			"0": "放行",
+			"1": "禁止"
+    	},
+		"DIRECTION_CHOICES":
+    	{
+			"0": "内向外",
+			"1": "外向内"
+    	},
+		"REQ_STATUS_CHOICES":
+    	{
+			"0": "待处理",
+			"1": "已完成",
+			"4": "已拒绝",
+			"9": "处理失败"
+    	}
+	}
+}

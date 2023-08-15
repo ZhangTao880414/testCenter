@@ -1,0 +1,389 @@
+[
+	{
+		"serverip": "10.188.4.65",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "wanping_download",
+		"upload_dbname": "wanping_upload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "10.188.80.16",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "/home/trade/trade_share/{ndates}/4",
+		"countcheck": 
+			[{
+				"tablename": "dbo.t_AppRunningInfo",
+				"count": 78
+			},
+			{
+				"tablename": "dbo.t_SSETrader",
+				"count": 56
+			},
+			{
+				"tablename": "dbo.t_SZSETrader",
+				"count": 16
+			}],
+		"customizedcheck": 
+			[
+			],
+		"increasecheck": 
+			[
+			{
+				"tablename": "dbo.t_SSEOrder"
+			},
+			{
+				"tablename": "dbo.t_SZSEOrder"
+			}],
+		"moneycheck": 
+			[{
+				"tablename": "dbo.t_TradingAccount",
+				"fields": "UsefulMoney,FetchLimit"
+			}],
+		"datecheck": 
+			[{
+				"tablename": "dbo.t_ExchangeSyncStatus",
+				"field": "TradingDay"
+			}],
+		"valuecheck": 
+			[{
+				"filename": "dbo.t_User_check.csv",
+				"tablename": "dbo.t_User",
+				"feilds": "UserID,OrderInsertCommFlux",
+				"condition": " WHERE OrderInsertCommFlux > '100'"
+			}]
+	},
+	{
+		"serverip": "10.188.4.65",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "sse_download",
+		"upload_dbname": "sse_upload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "10.188.80.16",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "/home/trade/trade_share/{ndates}/3",
+		"countcheck": 
+			[{
+				"tablename": "dbo.t_AppRunningInfo",
+				"count": 11
+			},
+			{
+				"tablename": "dbo.t_SSETrader",
+				"count": 2
+			},
+			{
+				"tablename": "dbo.t_SZSETrader",
+				"count": 3
+			}],
+		"customizedcheck": 
+			[
+			],
+		"increasecheck": 
+			[
+			{
+				"tablename": "dbo.t_SSEOrder"
+			}],
+		"moneycheck": 
+			[{
+				"tablename": "dbo.t_TradingAccount",
+				"fields": "UsefulMoney,FetchLimit"
+			}],
+		"datecheck": 
+			[{
+				"tablename": "dbo.t_ExchangeSyncStatus",
+				"field": "TradingDay"
+			}],
+		"valuecheck": 
+			[{
+				"filename": "dbo.t_User_null_check.csv",
+				"tablename": "dbo.t_User",
+				"feilds": "UserID,OrderInsertCommFlux",
+				"condition": " WHERE OrderInsertCommFlux > '100'"
+			}]
+	},
+	{
+		"serverip": "192.168.80.34",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "download",
+		"upload_dbname": "upload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "10.188.80.16",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "/home/trade/trade_share/{ndates}/2",
+		"countcheck": 
+			[{
+				"tablename": "dbo.t_AppRunningInfo",
+				"count": 10
+			},
+			{
+				"tablename": "dbo.t_SSETrader",
+				"count": 2
+			},
+			{
+				"tablename": "dbo.t_SZSETrader",
+				"count": 3
+			}],
+		"customizedcheck": 
+			[
+			],
+		"increasecheck": 
+			[
+			{
+				"tablename": "dbo.t_SZSEOrder"
+			}],
+		"moneycheck": 
+			[{
+				"tablename": "dbo.t_TradingAccount",
+				"fields": "UsefulMoney,FetchLimit"
+			}],
+		"datecheck": 
+			[{
+				"tablename": "dbo.t_ExchangeSyncStatus",
+				"field": "TradingDay"
+			}],
+		"valuecheck": 
+			[{
+				"filename": "dbo.t_User_null_check.csv",
+				"tablename": "dbo.t_User",
+				"feilds": "UserID,OrderInsertCommFlux",
+				"condition": " WHERE OrderInsertCommFlux > '100'"
+			}]
+	},
+	{
+		"serverip": "192.168.80.34",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "dongguan_download",
+		"upload_dbname": "dongguan_upload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "10.188.80.16",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "/home/trade/trade_share/{ndates}/5",
+		"countcheck": 
+			[{
+				"tablename": "dbo.t_AppRunningInfo",
+				"count": 11
+			},
+			{
+				"tablename": "dbo.t_SSETrader",
+				"count": 2
+			},
+			{
+				"tablename": "dbo.t_SZSETrader",
+				"count": 3
+			}],
+		"customizedcheck": 
+			[
+			],
+		"increasecheck": 
+			[
+			{
+				"tablename": "dbo.t_SZSEOrder"
+			}],
+		"moneycheck": 
+			[{
+				"tablename": "dbo.t_TradingAccount",
+				"fields": "UsefulMoney,FetchLimit"
+			}],
+		"datecheck": 
+			[{
+				"tablename": "dbo.t_ExchangeSyncStatus",
+				"field": "TradingDay"
+			}],
+		"valuecheck": 
+			[{
+				"filename": "dbo.t_User_null_check.csv",
+				"tablename": "dbo.t_User",
+				"feilds": "UserID,OrderInsertCommFlux",
+				"condition": " WHERE OrderInsertCommFlux > '100'"
+			}]
+	},
+	{
+		"serverip": "10.188.4.65",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "wanping_spdownload",
+		"upload_dbname": "wanping_spupload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "",
+		"countcheck": 
+			[
+			],
+		"customizedcheck": 
+			[{
+				"No": 1,
+				"tablename": "dbo.t_SSEOrder",
+				"condition": " WHERE ErrorID = 17574",
+				"StatusMsg": "17574:资金不足以支付保证金"
+			},
+			{
+				"No": 2,
+				"tablename": "dbo.t_SSEOrder",
+				"condition": " WHERE ErrorID = 17572",
+				"StatusMsg": "17572:资金不足以支付权利金"
+			},
+			{
+				"No": 3,
+				"tablename": "dbo.t_SZSEOrder",
+				"condition": " WHERE ErrorID = 20064",
+				"StatusMsg": "20064:结算参与人可用资金不足"
+			}],
+		"increasecheck": 
+			[
+			],
+		"moneycheck": 
+			[
+			],
+		"datecheck": 
+			[
+			],
+		"valuecheck": 
+			[
+			]
+	},
+	{
+		"serverip": "192.168.253.198",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "shangzt_spdownload",
+		"upload_dbname": "shangzt_spupload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "",
+		"countcheck": 
+			[
+			],
+		"customizedcheck": 
+			[{
+				"No": 1,
+				"tablename": "dbo.t_SSEOrder",
+				"condition": " WHERE ErrorID = 17574",
+				"StatusMsg": "17574:资金不足以支付保证金"
+			},
+			{
+				"No": 2,
+				"tablename": "dbo.t_SSEOrder",
+				"condition": " WHERE ErrorID = 17572",
+				"StatusMsg": "17572:资金不足以支付权利金"
+			},
+			{
+				"No": 3,
+				"tablename": "dbo.t_SZSEOrder",
+				"condition": " WHERE ErrorID = 20064",
+				"StatusMsg": "20064:结算参与人可用资金不足"
+			}],
+		"increasecheck": 
+			[
+			],
+		"moneycheck": 
+			[
+			],
+		"datecheck": 
+			[
+			],
+		"valuecheck": 
+			[
+			]
+	},
+	{
+		"serverip": "10.188.80.72",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "wpcredit_download",
+		"upload_dbname": "wpcredit_upload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "",
+		"countcheck": 
+			[
+			],
+		"customizedcheck": 
+			[
+			],
+		"increasecheck": 
+			[
+			],
+		"moneycheck": 
+			[
+			],
+		"datecheck": 
+			[
+			],
+		"valuecheck": 
+			[
+			]
+	},
+	{
+		"serverip": "192.168.80.34",
+		"user": "sa",
+		"password": "adminadmin$8",
+		"admin_passwd": "adminadmin$8",
+		"dbname": "dongguancredit_download",
+		"upload_dbname": "dongguancredit_upload",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/Backup_DataBase/",
+		"sship": "",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "123456",
+		"csv_remote_dir": "",
+		"countcheck": 
+			[
+			],
+		"customizedcheck": 
+			[
+			],
+		"increasecheck": 
+			[
+			],
+		"moneycheck": 
+			[
+			],
+		"datecheck": 
+			[
+			],
+		"valuecheck": 
+			[
+			]
+	}
+]

@@ -1,0 +1,4 @@
+hostip,port,username,password,servername,tgw_names,exch_front_ip,pbu
+192.168.80.6,22,root,root123,hx_option_shangzt ,tgw_58y0174|tgw_58y0178,172.27.128.192,397377
+192.168.80.12,22,root,root123,hxzq_wanping,tgw_58y0177,172.27.128.192,
+192.168.238.7,22,root,root123,hxzq_wanping,tgw_58y0177,172.27.128.192,

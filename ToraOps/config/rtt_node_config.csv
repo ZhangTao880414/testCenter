@@ -1,0 +1,2 @@
+hostip,port,username,password,servername,rtt_root_dir,node_id
+192.168.238.7,22,trade,trade,tradeserver,/home/trade/rtt/,2|3|4|5|6|7|9

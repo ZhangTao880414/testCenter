@@ -1,0 +1,2 @@
+mysql_db_ip,mysql_user,mysql_passwd,mysql_dbname,mysql_port
+192.168.238.21,test,test123,test_db,3306

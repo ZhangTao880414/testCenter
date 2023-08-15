@@ -1,0 +1,23 @@
+[
+	{
+		"address": "tcp://122.144.152.9:8500",
+		"LogInAccount": "admin",
+		"LogInAccountType": "TORA_TSTP_SP_LACT_UserID",
+		"password": "123456",
+		"QryMarketData": 
+			[{
+				"SecurityID":"11012137"
+			},
+			{
+				"SecurityID":"11012135"
+			}],
+		"QrySecurity": 
+			[
+			{
+				"SecurityID":"11012137"
+			},
+			{
+				"SecurityID":"11012135"
+			}]
+	}
+]

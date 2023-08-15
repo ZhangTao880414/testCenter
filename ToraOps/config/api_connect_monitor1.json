@@ -1,0 +1,30 @@
+{
+    "TraderApi":
+        [
+        	{
+        		"address": "tcp://101.226.250.252:9500",
+        		"LogInAccount": "admin",
+        		"LogInAccountType": "TORA_TSTP_LACT_UserID",
+                "password": "121212",
+                "inner_address":"tcp://192.168.253.201:9500"
+			},
+        	{
+        		"address": "tcp://101.226.250.251:9500",
+        		"LogInAccount": "admin",
+        		"LogInAccountType": "TORA_TSTP_LACT_UserID",
+                "password": "121212",
+                "inner_address":"tcp://192.168.253.201:9500"
+            }
+        ],
+    "MdApi":
+        [
+        	{
+        		"address": "tcp://122.144.152.9:26402",
+        		"innor_address":"tcp://10.188.152.X:26402"
+        	},
+        	{
+        		"address": "tcp://122.144.152.9:26402",
+        		"innor_address":"tcp://10.188.152.X:26402"
+        	}
+    	]
+}

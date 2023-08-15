@@ -1,0 +1,62 @@
+[
+	{
+		"serverip": "192.168.238.10",
+		"user": "sa",
+		"password": "123.comA",
+		"admin_passwd": "123.com",
+		"dbname": "download",
+		"upload_dbname": "auto_test",
+		"servername": "db1",
+		"db_back_local": "C:/Backup_DataBase",
+		"db_back_remote": "/home/trade/backup",
+		"sship": "192.168.238.7",
+		"sshport": 22,
+		"sshuser": "trade",
+		"sshpw": "trade",
+		"csv_remote_dir": "/home/trade/temp/{ndates}/2",
+		"trade_server_ip": "192.168.238.7",
+		"ts_user": "trade",
+		"ts_pw": "trade",
+		"countcheck": 
+			[{
+				"tablename": "dbo.t_User",
+				"count": 124
+			},
+			{
+				"tablename": "dbo.t_SSEOrder",
+				"count": 22
+			}],
+		"increasecheck": 
+			[
+			{
+				"tablename": "dbo.t_SSEOrder"
+			}],
+		"moneycheck": 
+			[{
+				"tablename": "dbo.t_SSEOrder",
+				"fields": "Price,Turnover"
+			},
+			{
+				"tablename": "dbo.t_SSEOrder",
+				"fields": "Turnover"
+			}],
+		"datecheck": 
+			[{
+				"tablename": "dbo.t_SSEOrder",
+				"field": "TradingDay"
+			}],
+		"valuecheck": 
+			[{
+				"filename": "dbo.t_User.csv",
+				"tablename": "dbo.t_User",
+				"feilds": "UserID,OpenDate",
+				"condition": " WHERE UserID = '398000010010' or UserID = '300000001929'"
+			},
+			{
+				"filename": "dbo.t_User.csv",
+				"tablename": "dbo.t_User",
+				"feilds": "UserID,OpenDate",
+				"condition": " WHERE UserID = '398000010010' or UserID = '300000001929'"
+			}]
+	}
+]
