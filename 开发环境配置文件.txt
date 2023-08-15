@@ -1,0 +1,378 @@
+网络管理器配置静态ip：
+172.19.48.1
+255.255.240.0
+
+重点： hyperv 虚拟机 不启用lan表示
+
+本地虚拟机配置静态网络
+vim /etc/sysconfig/network-scripts/ifcfg-eth0
+TYPE=Ethernet
+BOOTPROTO=static
+DEVICE=eth0
+NAME=eth0
+IPADDR=172.19.48.2
+NETMASK=255.255.240.0
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+ONBOOT=yes
+
+TYPE=Ethernet
+BOOTPROTO=static
+DEVICE=eth1
+NAME=eth1
+IPADDR=192.168.137.183
+NETMASK=255.255.255.0
+GATEWAY=192.168.137.255
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+ONBOOT=yes
+
+vmware虚拟机
+TYPE=Ethernet
+BOOTPROTO=static
+DEVICE=ens33
+NAME=ens33
+IPADDR=192.168.121.128
+NETMASK=255.255.255.0
+GATEWAY=192.168.121.255
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+ONBOOT=yes
+
+
+挂载安装文件ISO里面的yum源
+上传系统镜像文件rhel-server-7.8-x86_64-dvd.iso到/usr/local/src目录
+#新建镜像文件挂载目录
+mkdir /media/cdrom
+#进入系统镜像文件存放目录
+cd /usr/local/src
+ls #列出目录文件，可以看到刚刚上传的系统镜像文件
+#挂载系统镜像
+mount -t iso9660 -o loop /usr/local/src/rhel-server-7.8-x86_64-dvd.iso /media/cdrom
+
+#进入挂载目录，使用ls命令可以看到已经有文件存在了
+cd /media/cdrom 
+
+设置开机自启动
+vi /etc/fstab
+/usr/local/src/rhel-server-7.8-x86_64-dvd.iso /media/cdrom iso9660 defaults,ro,loop 0 0
+
+配置本地yum源
+cd /etc/yum.repos.d/
+touch rhel-media.repo
+vi rhel-media.repo
+[rhel-media]
+name=Red Hat Enterprise Linux 7.0
+baseurl=file:///media/cdrom
+enabled=1
+gpgcheck=1
+gpgkey=file:///media/cdrom/RPM-GPG-KEY-redhat-release
+
+
+添加mariadb10.2的国内yum源
+touch mariadb.repo
+[mariadb]
+name = MariaDB
+baseurl = https://mirrors.ustc.edu.cn/mariadb/yum/10.2/centos7-amd64
+gpgkey=https://mirrors.ustc.edu.cn/mariadb/yum/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+
+测试yum是否正常(ps如果原来有yum源可以使用下列命令更新yum信息)
+yum clean all #清除yum缓存
+yum makecache #缓存本地yum源中的软件包信息
+
+
+配置node js
+wget https://nodejs.org/dist/v14.17.5/node-v14.17.5-linux-x64.tar.xz
+tar xvf node-v14.17.5-linux-x64.tar.xz
+mv node-v14.17.5-linux-x64 node
+mv node /usr/local/
+ln -s /usr/local/node/bin/node /usr/bin/node
+ln -s /usr/local/node/bin/npm /usr/bin/npm
+
+cd /usr/local/node
+mkdir node_global
+mkdir node_cache
+npm config set prefix "node_global"
+npm config set cache "node_cache"
+
+
+
+配置mariadb：
+rpm -qa |grep mariadb
+rpm -e mariadb* --nodeps
+
+-------废弃============
+使用命令“find / -name mysql”查找生成的mysql目录，用“rm-rf path”彻底删除已生成的mysql文件和库
+cp /media/cdrom/Packages/mariadb* /home/
+cd /home
+chmod 777 mariadb*
+rpm -ivh *.rpm --nodeps -f
+==========================================
+
+安装mariadb10.2
+yum install MariaDB-server MariaDB-client -y
+
+
+1.关闭防火墙   systemctl stop firewalld.service && systemctl disable firewalld.service
+
+2.开启mariadb服务  systemctl start mariadb.service
+3.检查mariadb状态，确认服务已开启   systemctl status -l mariadb.service
+
+设置开机自启动： systemctl enable mariadb.service
+
+
+设置密码并登录（密码设置为与OS root密码一致）
+mysqladmin -u root password "devops"
+mysql -u root -p
+use mysql;
+grant all privileges on *.* to 'root'@'%' identified by 'devops' with grant option;
+flush privileges;
+
+下载项目
+git clone http://10.168.8.206:8888/tora/backend.git
+
+git clone git@10.168.8.206:tora/backend.git
+
+git clone git@10.168.8.206:tora/ipmitool.git
+
+git clone git@10.168.8.206:tora/vue-front.git
+
+git clone git@10.168.8.206:tora/operating_manual.git
+
+python下载：
+https://www.python.org/downloads/release/python-379/
+
+安装：
+yum -y groupinstall "Development tools"
+yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+yum install libffi-devel -y
+
+tar xvf Python-3.7.9.tgz
+cd Python-3.7.9
+mkdir /usr/local/python3
+./configure --prefix=/usr/local/python3
+make && make install
+
+ln -s /usr/local/python3/bin/python3 /usr/local/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/local/bin/pip3
+
+python3 -V
+pip3 -V
+
+创建数据表
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+创建管理员
+python3 manage.py createsuperuser
+
+python3 manage.py runserver 0.0.0.0:9090
+
+2021-09-02 9:50:59
+
+
+
+
+        'NAME': 'tora_oper_data', # 数据库名称
+        'HOST': '11.11.1.123', # 数据库地址，本机 ip 地址 127.0.0.1
+        'PORT': 3306, # 端口
+        'USER': 'singularity_oper',  # 数据库用户名
+        'PASSWORD': 'Singularity$20201113', # 数据库密码
+
+导出数据	
+mysqldump -u singularity_oper -p tora_oper_data > tora_oper_data.sql
+
+创建表数据修改为以下项：
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMICC;
+或者
+ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+导入数据：
+mysql -u root -p tora_oper_data < tora_oper_data.sql
+
+
+
+本地虚拟机导出数据：
+mysqldump -u root -p tora_oper_data > tora_oper_data_local.sql
+本地虚拟机导入数据：
+mysql -u root -p tora_oper_data < tora_oper_data_local.sql
+
+配置 coreapi
+pip3 install coreapi
+
+settings.py文件中
+REST_FRAMEWORK = {
+    # 指定用于支持coreapi的Schema
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
+
+urls.py中添加文档路径
+from rest_framework.documentation import include_docs_urls
+
+urlpatterns = [
+   #3. coreapi文档路径
+    path('docs/',include_docs_urls(title="接口测试平台API文档",
+                                   description="这个是接口平台的文档"
+                                   ))
+]
+
+
+access_address 字段
+说明：前台做限制，一次不要超过5条记录；多个IP和端口放在一个字段，规则如下：ip_1:port1;ip_2:port1|port2|port3;ip_3:port1~port10 
+  “;”分割多条ip网络申请
+  “|”分割多个port
+“~”分割连续port
+
+
+ipmi脚本配置定时任务
+crontab -e
+0,15,30,45 * * * * cd /home/bmc/ipmiinfo;/usr/bin/bash get_cputempADNfans_byipmitools.sh
+
+
+
+
+查询最近时间
+SELECT check_time,COUNT(1) AS count from tora_monitor_ipmiinfodata GROUP BY check_time ORDER BY check_time desc
+
+SELECT distinct(ipmi_ip) from tora_monitor_ipmiinfodata
+
+查询30天内监控的ip
+SELECT distinct(ipmi_ip) from tora_monitor_ipmiinfodata WHERE DATE_SUB(CURDATE(), INTERVAL 30 DAY) <=check_time
+
+
+'NAME': 'tora_oper_data', # 数据库名称
+'HOST': '11.11.1.123', # 数据库地址，本机 ip 地址 127.0.0.1 
+'PORT': 3306, # 端口 
+'USER': 'singularity_oper',  # 数据库用户名
+'PASSWORD': 'Singularity$20201113', # 数据库密码
+
+drop table toraapp_customerserverautomigrationtaskflow;
+drop table toraapp_networksegment;
+drop table toraapp_offshelfmachine;
+drop table toraapp_offshelfmachine_customer;
+drop table toraapp_sendmailrecored;
+drop table toraapp_setvpnstatus;
+drop table toraapp_totalavailableposition;
+
+备份数据库： mysqldump -u singularity_oper -p tora_oper_data > tora_oper_data_local.sql
+mysql -u singularity_oper -p
+导入客户独用的机器： import_cust_machine
+导入自由机器： import_tora_machine
+导入共享机器： import_cust_share_machine
+
+部署方法：
+trade用户登录系统
+ssh trade    密码:trade
+
+导出服务器信息表
+mysqldump -u singularity_oper -p tora_oper_data toraapp_shelfmachine toraapp_shelfmachine_customer  > tora_oper_shelfmachine.sql
+
+还原服务器信息表
+mysql -u singularity_oper -p  tora_oper_data < tora_oper_shelfmachine.sql
+
+
+删除监控正常的origin_data数据：
+UPDATE tora_monitor_ipmiinfodata SET origin_data='' WHERE health_score=100;
+
+进入项目目录：
+/home/trade/tora_ops/ToraOps
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py runserver 0.0.0.0:9090
+
+下载sshpass： https://centos.pkgs.org/7/epel-x86_64/sshpass-1.06-1.el7.x86_64.rpm.html
+安装： rpm -ivh sshpass-1.06-1.el7.x86_64.rpm
+sshpass -p 'Adminadmin$8' ssh -o StrictHostKeyChecking=no qidian@192.168.10.251 "ping 114.114.114.114"  
+
+39，27,22,16,6
+
+#启用环境
+cd /home/trade/tora_ops/env && source ./bin/activate
+
+#关闭uwsgi
+cd /home/trade/tora_ops/env && source ./bin/activate
+cd /home/trade/tora_ops/ToraOps/uwsgi_conf
+ps aux |grep toraapp |grep -v grep|awk '{print $2}'| xargs kill -9
+rm -rf /home/trade/tora_ops/ToraOps/uwsgi_conf/uwsgi.pid
+echo ''>/home/trade/tora_ops/ToraOps/uwsgi_conf/uwsgi.log
+rm -rf /home/trade/tora_ops/ToraOps/ipmiinfo/*
+ps aux |grep toraapp
+netstat -lanp |grep 9001
+
+
+cd /home/trade/tora_ops/ToraOps/uwsgi_conf
+uwsgi --stop uwsgi.pid
+ps aux |grep tora
+
+#开启uwsgi
+cd /home/trade/tora_ops/ToraOps/uwsgi_conf
+uwsgi --ini uwsgi.ini
+
+打包文件
+tar -cvf ToraOps.tar --exclude=*.log --exclude=*.tar ToraOps
+
+vpn禁用功能
+setvpnstatus_monitor  定时任务调用
+set_sn_vpnuser_status 后台设置
+
+13681919346
+
+
+#25 9 * * 1-5 . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/monitor;python -u mdapi_monitor.py >> /dev/null 2>&1;deactivate
+0,30 16-23 * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python -u ping_monitor_crontab.py >> /dev/null 2>&1;deactivate
+*/6 7-15 * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python -u ping_monitor_crontab.py >> /dev/null 2>&1;deactivate
+*/5 * * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python3 -u ipmi_monitor.py >> /home/trade/tora_ops/ToraOps/crontab_job/ipmilog/ipmi_monitor.log 2>&1;deactivate
+15,25,30 9 * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python3 -u switchboard_port_monitor.py >> /home/trade/tora_ops/ToraOps/crontab_job/ipmilog/switchboard_port_monitor.log 2>&1;deactivate
+0 13,15 * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python3 -u switchboard_port_monitor.py >> /home/trade/tora_ops/ToraOps/crontab_job/ipmilog/switchboard_port_monitor.log 2>&1;deactivate
+*/3 * * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python3 -u switchboard_hqjy_monitor.py >> /home/trade/tora_ops/ToraOps/crontab_job/ipmilog/switchboard_hqjy_monitor.log 2>&1;deactivate
+*/1 * * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python3 -u switchboard_network_monitor.py >> /home/trade/tora_ops/ToraOps/crontab_job/ipmilog/switchboard_network_monitor.log 2>&1;deactivate
+# */1 * * * * . ~/.bash_profile;cd /home/trade/tora_ops/env/bin;source ./activate;cd /home/trade/tora_ops/ToraOps/crontab_job;python3 -u job_monitor_crontab.py >> /home/trade/tora_ops/ToraOps/crontab_job/ipmilog/job_monitor_crontab.log 2>&1;deactivate
+
+
+
+修改文件权限为755
+chmod 755 /home/trade/tora_ops/ToraOps/common/copy_ssh_rsa.sh
+chown -R trade:trade /home/trade/tora_ops/ToraOps
+
+cd /home/trade/tora_ops/env && source ./bin/activate && python /home/trade/tora_ops/backend/myapps/tora_monitor/job_scripts/tradeCheck_xianHuo.py after > {} && deactivate
+
+cd /home/trade/tora_ops/env && source ./bin/activate && python /home/trade/tora_ops/ToraOps/myapps/tora_monitor/job_scripts/tradeCheck_xianHuo.py /home/trade/tora_ops/ToraOps/config/tradecheck/hx_sh_60.cfg after> /home/trade/tora_ops/ToraOps/ipmiinfo/2021-11-11-14-45-10-0.txt && deactivate
+
+select * from django_apscheduler_djangojobexecution where job_id="switchboard_network_monitor" limit 1;
+
+SELECT distinct(ipmi_ip) from toraapp_shelfmachine where is_active=1;
+
+bash get_ipmi_monitor.sh "test.txt" "10.187.11.57" "2021"
+
+推出虚拟环境
+deactivate
+
+curl http://11.11.1.123:9000/admin
+
+
+
+{
+    "name": "My Server",
+    "host": "192.168.121.128",
+    "protocol": "sftp",
+    "port": 22,
+    "username": "root",
+    "password": "devops",
+    "remotePath": "/home/trade/tora_ops/",
+    "uploadOnSave": true
+}
+
+
+10 */2 * * * cd /home/trade/tora_ops/env;source ./bin/activate;cd /home/trade/ipmitest;python3 insetDataToMysql.py;deactivate
+
+*/10 7-20 * * * cd /home/trade/tora_ops/env;source ./bin/activate;cd /home/trade/tora_ops/ToraOps/myapps/tora_monitor/job_scripts/;python3 insetDataToMysql.py;deactivate
+
+
+cd /home/trade/tora_ops/env;source ./bin/activate;cd /home/trade/tora_ops/ToraOps/myapps/tora_monitor/job_scripts/;python3 insetDataToMysql.py;deactivate
+
+内网过滤2台及以上的机器
+SELECT COUNT(*) AS repetitions,inner_ip FROM toraapp_shelfmachine  GROUP BY inner_ip HAVING repetitions > 1;
+
+sn过滤2台及以上的机器
+SELECT COUNT(*) AS repetitions,serial_number FROM toraapp_shelfmachine  GROUP BY serial_number HAVING repetitions > 1;
