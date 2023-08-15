@@ -1,3 +1,0 @@
-hostip,port,username,password,servername,processes,ports
-192.168.238.7,  22, trade,trade,    tradeserver,chronyd|crond|dggg, 7:22;7:22;7:22
-192.168.238.8,  22, trade,trade,    tradeserver,chronyd|crond|dggg, 8:22;8:22;8:22

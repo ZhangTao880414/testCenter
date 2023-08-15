@@ -1,2 +1,0 @@
-server,username,password,dbname,tablename
-192.168.238.10,sa,123.comA,download,t_SSEOrder

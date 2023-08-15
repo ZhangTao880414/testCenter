@@ -1,9 +1,0 @@
----
-  - hosts: "{{ hostip }}"
-    remote_user: root
-    tasks:
-    - name: create users
-      user:
-        name: "{{ user }}"                                                                 ##变量对应的是loop语句块中的内容
-        password: "{{ passwd|password_hash('sha512') }}"
-    tags: user

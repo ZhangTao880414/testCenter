@@ -1,2 +1,0 @@
-hostip,port,username,password,servername,command
-192.168.238.22,22,root,root123,tradeserver,onload

@@ -1,4 +1,0 @@
-inner_ip,is_monitor,engine_room,assert_number,assert_type,cabinet,unit,model,serial_number,node_name,use_status,operation_system,outer_ip,high_trade_ip,high_mqA_ip,high_mqB_ip,ipmi_ip,,,
-192.168.238.23,,宁桥路机房,,,I3-17,U17,IBM x3550 M3,06YVL93,3号节点,,windows2008,10.20.253.202,220.89.121.4,,,,,,
-192.168.238.2,0,宁桥路机房,,,I3-18,U33,Lenovo x3550 M4,06HAGAL,3号节点,,Linux,10.20.253.10,220.89.121.12,,,,,,
-192.168.238.24,,宁桥路机房,,,,U29-30,HP DL 380,6CU82478BM,3号节点,,windows2012,,220.89.121.13,,,,,,

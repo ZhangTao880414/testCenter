@@ -1,2 +1,0 @@
-hostip,port,username,password,servername,remote_dir,xwdm_check_col,follow_hostip,follow_port,follow_username,follow_password,follow_dir
-192.168.238.7,22,trade,trade,tradeserver,/home/trade/exchange_file/,,192.168.238.10,22,administrator,123.com,/C:/Backup_DataBase/

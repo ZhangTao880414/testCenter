@@ -1,3 +1,0 @@
-hostip,port,username,password,servername,remote_dir,hostip_h,port_h,username_h,password_h,remote_dir_h,filetype
-192.168.238.7,22,trade,trade,tradeserver,/home/trade/temp,192.168.238.7,22,trade,trade,/home/trade/backup_wanping,W
-192.168.238.7,22,trade,trade,tradeserver,/home/trade/temp,192.168.238.7,22,trade,trade,/home/trade/backup_shenzhen,S
